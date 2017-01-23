@@ -182,7 +182,8 @@ function getData(swagger, apiPath, operation, response, config, info) {
     });
   }
 
-  if (grandProperty.responses[response].hasOwnProperty('schema')) {
+  if (grandProperty.responses[response]
+    && grandProperty.responses[response].hasOwnProperty('schema')) {
     data.noSchema = false;
     data.schema = grandProperty.responses[response].schema;
     data.schema = JSON.stringify(data.schema, null, 2);
